@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Klien Laundry B2B</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100">
+
+    <div id="toast-container" class="fixed top-5 right-5 z-50 space-y-2"></div>
+
+    <div id="auth-page" class="page min-h-screen flex items-center justify-center p-4">
+        <div class="w-full max-w-sm">
+            <h2 class="text-center text-3xl font-bold text-gray-800 mb-6">Laundry B2B Klien</h2>
+            
+            <div id="login-container" class="bg-white p-8 rounded-lg shadow-md">
+                <form id="login-form">
+                    <div class="mb-4">
+                        <label for="login-notelp" class="block text-sm font-medium text-gray-700">No. Telepon</label>
+                        <input type="tel" id="login-notelp" class="input-text w-full mt-1" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="login-password" class="block text-sm font-medium text-gray-700">Password</label>
+                        <input type="password" id="login-password" class="input-text w-full mt-1" required>
+                    </div>
+                    <button type="submit" class="btn-primary w-full">Login</button>
+                </form>
+                <p class="text-center text-sm mt-4">
+                    Belum punya akun? <a href="#" id="show-register" class="font-medium text-blue-600 hover:underline">Daftar di sini</a>
+                </p>
+            </div>
+
+            <div id="register-container" class="bg-white p-8 rounded-lg shadow-md hidden">
+                <form id="register-form">
+                    <div class="mb-4">
+                        <label for="register-nama-perusahaan" class="block text-sm font-medium text-gray-700">Nama Perusahaan / Hotel / Kost</label>
+                        <input type="text" id="register-nama-perusahaan" name="nama_perusahaan" class="input-text w-full mt-1" required>
+                        <p class="text-xs text-gray-500 mt-1">Harap isi dengan nama resmi (contoh: Hotel Aston, Kost Ibu Budi).</p>
+                    </div>
+                     <div class="mb-4">
+                        <label for="register-nama" class="block text-sm font-medium text-gray-700">Nama Lengkap Anda (PIC)</label>
+                        <input type="text" id="register-nama" name="nama_lengkap" class="input-text w-full mt-1" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="register-jabatan" class="block text-sm font-medium text-gray-700">Jabatan Anda</label>
+                        <input type="text" id="register-jabatan" name="jabatan" class="input-text w-full mt-1" placeholder="cth: Security, Housekeeping">
+                    </div>
+                    <div class="mb-4">
+                        <label for="register-notelp" class="block text-sm font-medium text-gray-700">No. Telepon Anda (untuk login)</label>
+                        <input type="tel" id="register-notelp" name="no_telpon" class="input-text w-full mt-1" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="register-password" class="block text-sm font-medium text-gray-700">Buat Password</label>
+                        <input type="password" id="register-password" name="password" class="input-text w-full mt-1" required>
+                    </div>
+                    <button type="submit" class="btn-primary w-full">Daftar Akun</button>
+                </form>
+                <p class="text-center text-sm mt-4">
+                    Sudah punya akun? <a href="#" id="show-login" class="font-medium text-blue-600 hover:underline">Login di sini</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="app-page" class="page hidden p-4">
+        <h1 class="text-2xl font-bold">Selamat Datang, <span id="user-name"></span>!</h1>
+        <p>Halaman utama aplikasi klien akan ada di sini.</p>
+        <button id="logout-btn" class="mt-4 text-red-500 underline">Logout</button>
+    </div>
+
+    <script src="main.js" type="module"></script>
+</body>
+</html>
